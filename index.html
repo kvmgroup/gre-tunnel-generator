@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            form div {
+                display: block;
+                margin-bottom: 12px;
+            }
+            table th {
+                text-align: left;
+                font-weight: normal;
+                padding: 1px 20px 2px 0;
+            }
+            table {
+                padding-bottom: 8px;
+            }
+        </style>
+        <title>GRE Tunnel Generator</title>
+    </head>
+    <body>
+        <h1>GRE Tunnel Generator</h1>
+        <form id="form">
+            <table>
+                <tbody>
+                    <tr>
+                            <label>Local IP</label>
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Local IP" id="local" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Remote IP</label>
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Remote IP" id="remote" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Tunneled CIDR</label> 
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Tunneled CIDR" id="subnet" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Local route</label>
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Local route" id="local_route_cidr" value="192.168.169.1/30" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Remote route</label>
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Local route" id="remote_route_cidr" value="192.168.168.2/30" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Interface name</label>
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Interface name" id="interface" value="gre0" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Route name</label>
+                        </th>
+                        <th>
+                            <input type="text" placeholder="Route name" id="route_name" value="KVM" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Route ID</label>
+                        </th>
+                        <th>
+                            <input type="number" placeholder="Route id" id="route_id" value="100" />
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit">Generate commands</button>
+        </form>
+        <pre id="output">
+# Output
+        </pre>
+        <script src="./js/lib.js"></script>
+    </body>
+</html>
