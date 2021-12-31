@@ -28,7 +28,7 @@ echo "${route_id.value} ${route_name.value}" >> /etc/iproute2/rt_tables
 ip addr add ${remote_route.value} dev ${interface.value}
 ip addr add ${subnet.value} dev ${interface.value}
 ip rule add from ${subnet.value} lookup ${route_name.value}
-ip route add default via ${remote_route.value.split('.')[0]}.${remote_route.value.split('.')[1]}.${remote_route.value.split('.')[2]}.1 table KVM`
+ip route add default via ${remote_route.value.split('.')[0]}.${remote_route.value.split('.')[1]}.${remote_route.value.split('.')[2]}.1 table ${route_name.value}`
 }
 
 form.addEventListener('submit', handleForm);
